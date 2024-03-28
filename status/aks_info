@@ -1,0 +1,12 @@
+
+
+show_aks_info() {
+  local index=$1
+  local icon=$(get_tmux_option "@catppuccin_aks_info_icon" "⎈")
+  local color=$(get_tmux_option "@catppuccin_aks_info_color" "$thm_blue")
+  local text=$(get_tmux_option "@catppuccin_aks_info_text" "#{k8s_status}")
+
+  local module=$( build_status_module "$index" "$icon" "$color" "$text" )
+
+  echo "$module"
+}
